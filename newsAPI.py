@@ -11,6 +11,7 @@
 #print statement that clearly displays information- print("In todays news {raw[items]} ")
 
 import requests
+import random
 
 url = "https://financial-news6.p.rapidapi.com/news/headline"
 
@@ -31,5 +32,16 @@ finNews= response.json()
 print(type(finNews))
 print(finNews)
 print(response)
-for each in finNews:
-    print(each["title"])
+#for each in finNews:
+ #   print(each["title"])
+
+#Ok, Figured out how to access the index of the list and its Key pair.(I think thats what it is called)
+#I always get confused on the dictionary/list and key,value pair thing
+#Is it possible to automatically update with the API? 
+#Use random number function for index maybe? 
+#print(finNews[0]["title"])
+#Imported Random Module to randomly access a different Financial News title every time the API is called. 
+#I did a google search on how to randomly access an index. I also wanted to print the title of that. 
+#I know that has something to do with a key value pair but Im still confused on how to properly explain that 
+print(random.choice(finNews)["title"])
+print(f"In today's financial News for Sp")
