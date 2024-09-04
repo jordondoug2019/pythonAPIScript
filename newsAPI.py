@@ -23,4 +23,13 @@ headers = {
 
 response = requests.get(url, headers=headers, params=querystring)
 
-print(response.json())
+#print(response.json())
+
+finNews= response.json()
+#print(finNews.text)
+#JSON response returns a list. access indexes of list and dictionary like Dating Script 
+print(type(finNews))
+print(finNews)
+print(response)
+for each in finNews:
+    print(each["title"])
