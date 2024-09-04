@@ -27,11 +27,15 @@ response = requests.get(url, headers=headers, params=querystring)
 
 #print(response.json())
 
+#assigned Response to a variable 
 finNews= response.json()
+
 #print(finNews.text)
 #JSON response returns a list. access indexes of list and dictionary like Dating Script 
 #print(type(finNews))
 #print(finNews)
+
+#Checked to make sure the HTTP Request would return a 200 Response Code 
 print(response)
 #for each in finNews:
  #   print(each["title"])
@@ -42,8 +46,9 @@ print(response)
 #Use random number function for index maybe? 
 #print(finNews[0]["title"])
 #Imported Random Module to randomly access a different Financial News title every time the API is called. 
-#I did a google search on how to randomly access an index. I also wanted to print the title of that. 
+#I did a google search on how to randomly access an index. I also wanted to print the title of that index. 
 #I know that has something to do with a key value pair but Im still confused on how to properly explain that 
-print(random.choice(finNews)["title"])
+#print(random.choice(finNews)["title"])
+
 #Now I'm just optimizing. I want to add the current date every time the script is ran
 print(f"Financial News for {date.today()}: {random.choice(finNews)["title"]} ")
