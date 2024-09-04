@@ -12,6 +12,7 @@
 
 import requests
 import random
+from datetime import date #The module is datetime, date is the class
 
 url = "https://financial-news6.p.rapidapi.com/news/headline"
 
@@ -29,8 +30,8 @@ response = requests.get(url, headers=headers, params=querystring)
 finNews= response.json()
 #print(finNews.text)
 #JSON response returns a list. access indexes of list and dictionary like Dating Script 
-print(type(finNews))
-print(finNews)
+#print(type(finNews))
+#print(finNews)
 print(response)
 #for each in finNews:
  #   print(each["title"])
@@ -44,4 +45,5 @@ print(response)
 #I did a google search on how to randomly access an index. I also wanted to print the title of that. 
 #I know that has something to do with a key value pair but Im still confused on how to properly explain that 
 print(random.choice(finNews)["title"])
-print(f"In today's financial News for Sp")
+#Now I'm just optimizing. I want to add the current date every time the script is ran
+print(f"Financial News for {date.today()}: {random.choice(finNews)["title"]} ")
